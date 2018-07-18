@@ -20,14 +20,9 @@
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:text="Patient Name"
+        android:gravity="center_vertical"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-    <Switch
-        android:id="@+id/alarm"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_margin="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="1" />
+
 
 </LinearLayout>
