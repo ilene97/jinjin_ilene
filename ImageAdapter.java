@@ -1,4 +1,4 @@
-package com.example.caucse.myapplication;
+package com.example.ilene.ddoyak_gardians;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,9 +10,8 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-/**
- * Created by caucse on 2018-07-16.
- */
+
+
 
 public class ImageAdapter extends ArrayAdapter<String> {
 
@@ -28,11 +27,10 @@ public class ImageAdapter extends ArrayAdapter<String> {
         View view = imageInflater.inflate(R.layout.image_layout,parent,false);
         String item = getItem(position);
 
-        TextView patient_name = (TextView)view.findViewById(R.id.name);
+        TextView name = (TextView)view.findViewById(R.id.name);
         ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
-        Switch alarm = (Switch)view.findViewById(R.id.alarm);
 
-        patient_name.setText(item);
+        name.setText(item);
         imageView.setImageResource(R.mipmap.person);
 
         return view;

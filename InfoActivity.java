@@ -1,13 +1,12 @@
-package com.example.caucse.myapplication;
 
+package com.example.ilene.ddoyak_gardians;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-/**
- * Created by caucse on 2018-07-16.
- */
+
+
 
 public class InfoActivity extends AppCompatActivity{
     @Override
@@ -15,12 +14,12 @@ public class InfoActivity extends AppCompatActivity{
         super.onCreate(bundle);
         setContentView(R.layout.patient_info);
 
-        TextView name = (TextView) findViewById(R.id.name);
+        TextView name = (TextView)findViewById(R.id.name);
 
         Intent intent = getIntent();
-        //name.setText(intent.getStringExtra("patient_name"));
+        name.setText(intent.getStringExtra("name"));
 
-        //TextView information = (TextView)findViewById(R.id.information);
+        TextView information = (TextView)findViewById(R.id.information);
     }
 
 
