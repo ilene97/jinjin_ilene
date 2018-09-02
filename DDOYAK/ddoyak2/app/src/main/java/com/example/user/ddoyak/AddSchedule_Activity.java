@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,8 +32,6 @@ public class AddSchedule_Activity extends AppCompatActivity{
     Button register;
 
     String scheduleName, date, startTime, endTime;
-
-    //ScheduleDBHelper scddbHelper = new ScheduleDBHelper(getApplicationContext(), "SCHEDULE_DB.db",null,1);
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("OUTING");
@@ -74,12 +71,11 @@ public class AddSchedule_Activity extends AppCompatActivity{
                 scheduleTitle.setText("");
 
                 setDateTime();
-                ScheduleActivity.scheduleitems.add(new ScheduleInfo(date, startTime,endTime,scheduleName));
-                //scddbHelper.insert(date, startTime,endTime,scheduleName);
 
                 changeDataFormat();
-                myRef.child(scheduleName).child("0").setValue("s#"+startTime);
-                myRef.child(scheduleName).child("1").setValue("e#"+endTime);
+                myRef.child(scheduleName).child("0").setValue(scheduleName);
+                myRef.child(scheduleName).child("1").setValue("s#"+startTime);
+                myRef.child(scheduleName).child("2").setValue("e#"+endTime);
 
                 Intent intent = new Intent(getApplicationContext(),ScheduleActivity.class);
                 startActivity(intent);
